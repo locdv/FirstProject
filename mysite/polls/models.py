@@ -26,10 +26,11 @@ class Question(models.Model):
         return self.question_text
 
     def was_published_recently(self):
-        """Method validate puulished date
+        """Method validate published date
         auth: anhnd
         """
-        return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+        now = timezone.now()
+        return now >= self.pub_date >= timezone.now() - datetime.timedelta(days=1)
 
 class Choice(models.Model):
     """"
