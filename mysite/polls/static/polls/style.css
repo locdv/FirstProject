@@ -4,3 +4,6 @@ li a {
 body {
     background: white url("images/background.jpg") no-repeat;
 }
+input[type=radio]:checked + label{
+    background: red;
+  }
