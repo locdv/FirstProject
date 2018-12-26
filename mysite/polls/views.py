@@ -37,10 +37,10 @@ class ResultsView(generic.DetailView):
     template_name = 'polls/results.html'
 
     def get_queryset(self):
-        questionList = []
+        questionList = Question.objects.filter(pub_date__lte=timezone.now())
         for question in Question.objects.all():
             if question.choice_set.count() > 0:
-                questionList.append(question)
+                questionList.exclude(id=question.id)
 
         return questionList
 
