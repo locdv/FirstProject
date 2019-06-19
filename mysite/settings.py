@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY') #'xkxrlvzoadxzbl8y(fe3qs3hbz0*@j4y72at52=hbx&a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = ['.herokuapp.com']
+ALLOWED_HOSTS = ['*.elasticbeanstalk.com']
 
 
 # Application definition
@@ -137,11 +137,8 @@ USE_TZ = True
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static') 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (
-     os.path.join(BASE_DIR, 'static'),
- )
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 
 CORS_ORIGIN_ALLOW_ALL = True
 
