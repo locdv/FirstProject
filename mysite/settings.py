@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-if 'RDS_DB_NAME' in os.environ:
+if 'RDS_DB_NAME1' in os.environ:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
