@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY') #'xkxrlvzoadxzbl8y(fe3qs3hbz0*@j4y72at52=hbx&a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False   #config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = ['django-turorial3-env.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 #         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
 #     }
 # }
-if 'RDS_DB_NAME1' in os.environ:
+if 'RDS_DB_NAME' in os.environ:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -143,7 +143,7 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 )
 
-STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 CORS_ORIGIN_ALLOW_ALL = True
 
