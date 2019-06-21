@@ -28,7 +28,7 @@ SECRET_KEY = config('SECRET_KEY') #'xkxrlvzoadxzbl8y(fe3qs3hbz0*@j4y72at52=hbx&a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False   #config('DEBUG', default=True, cast=bool)
 
-ALLOWED_HOSTS = ['.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['django-turorial3-env.us-west-2.elasticbeanstalk.com']
 
 
 # Application definition
